@@ -1,0 +1,60 @@
+﻿<style type="text/css">
+  .form-horizontal input.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+  }
+
+  .form-horizontal input.ng-valid.ng-dirty {
+    border-color: #78FA89;
+  }
+</style>
+<div class="view">
+    <div class="container">
+        <div class="row">
+        <nav class= "navbar navbar-default" role= "navigation" >
+        <div class= "navbar-header" >
+        <a class= "navbar-brand" href= "#/customers"><i class="glyphicon glyphicon-th-large"></i>Item List </a>
+        <a ng-show="customer._id" class= "navbar-brand" href= "#/edit-customer/0"><i class="glyphicon glyphicon-plus"></i> Add New </a>
+        <a ng-show="customer._id" class= "navbar-brand pull-right"><i class="glyphicon glyphicon-edit"></i> Current editing Item Number: {{customer._id}}</a>
+        </div>
+        </nav>
+        <header>
+            <h3>{{title}}</h3>
+        </header>
+        <div class="col-md-12">
+
+<form role="form" name="myForm" class="form-horizontal">
+<div class="row">
+<div class= "form-group" ng-class="{error: myForm.name.$invalid}">
+    <label class= "col-md-2" style="text-align:right;"> Name： </label>
+    <div class="col-md-4">
+    <input name="fname" ng-model="customer.fname" type= "text" class= "form-control" placeholder="Please enter your name" required/>
+    <span ng-show="myForm.fname.$dirty && myForm.fname.$invalid" class="help-inline">Name Required</span>
+    </div>
+</div>
+<div class= "form-group">
+    <label class= "col-md-2" style="text-align:right;"> Type： </label>
+    <div class="col-md-4">
+
+<select ng-model="customer.ftype"  class= "form-control" required>  
+                    <option value="" disabled selected>--please choose--</option>  
+                    <option ng-repeat="role in roles" value="{{role.id}}" ng-selected="role.id == customer.ftype">{{role.name}}</option>  
+                </select>  
+	<span ng-show="myForm.ftype.$invalid" class="help-inline">Type must be selected </span>                    
+    </div>
+</div>
+
+<div class= "form-group">
+    <div class="col-md-6" align="center">
+    
+        <button ng-click="saveCustomer(customer);" 
+                ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">{{buttonText}}</button>
+        <button ng-click="deleteCustomer(customer)"
+                ng-show="customer._id" class="btn btn-warning">Delete</button><a href="#/" class="btn">Cancel</a>
+    </div>
+</div>
+</div>
+</form>
+        </div></div>
+    </div>
+</div>

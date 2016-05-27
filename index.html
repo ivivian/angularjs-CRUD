@@ -1,0 +1,49 @@
+<!--
+ /*
+ * This source code is licensed under the Apache License 2.0!
+ * @author ivivian <669775@gmail.com>
+ * version: 1.0
+ * https://github.com/ivivian/angularjs-CRUD
+ */
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+	body {background:url(images/bg.jpg) repeat-x;}	
+    ul>li, a{cursor: pointer;}
+    </style>
+    <title>Angularjs CRUD Add Edit Delete 增删改功能（php）</title>
+</head>
+<body>
+<div class="navbar navbar-default" id="navbar">
+    <div class="container" id="navbar-container">
+    <div class="navbar-header">
+        <a href="https://github.com/ivivian/angularjs-CRUD" class="navbar-brand">
+            <small>
+                <i class="glyphicon glyphicon-home"></i>
+                &nbsp;Ivivian/AngularJS CRUD 
+            </small>
+        </a><!-- /.brand -->
+        
+    </div><!-- /.navbar-header -->
+    <div class="navbar-header pull-right" role="navigation">
+        <a href="https://github.com/ivivian/angularjs-CRUD" class="btn btn-sm btn-warning nav-button-margin"> <i class="glyphicon glyphicon-download"></i>&nbsp;Download Project</a>
+    </div>
+    </div>
+</div>
+
+    
+<div  ng-app="myApp" ng-app >
+<div class="container">
+<br/>
+    <div ng-view="" id="ng-view"></div>
+</div>
+</div>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="app/app.js"></script>         
+</body>
+</html>

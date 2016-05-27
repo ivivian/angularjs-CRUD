@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <div class="row">
+    <div class="col-md-12" ng-show="customers.length > 0">
+    <nav class= "navbar navbar-default" role= "navigation" >
+    <div class= "navbar-header" >
+    <a class="btn btn-lg btn-success" href="#/edit-customer/0"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add New</a>
+    </div>
+    <div style="float:left;margin-left:60px;margin-top:10px;">
+ Search Key: <input ng-model="query"  class="input-sm">
+       Sort: <select ng-model="order"  class="input-sm">
+	            <option value="fid">ID</option>
+                <option value="fname">Name</option>
+                <option value="ftype">Type</option>
+            </select>    
+    </div>
+    </nav>
+        <table class="table table-striped table-bordered">
+        <thead>
+        <th>ID&nbsp;</th>
+        <th>Name&nbsp;</th>
+        <th>Type&nbsp;</th>
+        <th>Operation&nbsp;</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="data in customers | filter:query | orderBy:order">
+                <td>{{data.fid}}</td>
+                <td>{{data.fname}}</td>
+                <td>{{data.ftype}}</td>
+                <td><a href="#/edit-customer/{{data.fid}}" class="btn">&nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp;Edit</a></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-12" ng-show="customers.length == 0">
+        <div class="col-md-12">
+            <h4>No Item Information!</h4>
+        </div>
+    </div>
+</div>
