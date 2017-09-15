@@ -18,7 +18,7 @@
 		
 		const DB_SERVER = "localhost";
 		const DB_USER = "root";
-		const DB_PASSWORD = "tongxin2013";
+		const DB_PASSWORD = "xxxx";
 		const DB = "db_item";
 		const TableName="t_item";//Table name
 		const TableColNames="fname,ftype";//Table column names
